@@ -10,6 +10,12 @@ import { QueryService } from 'src/app/services/query-service.service';
 export class SearchResultsComponent implements OnInit {
   results: SearchResult[] = []
 
+  cols = [
+    { field: 'ranking', header: 'Ranking' },
+    { field: 'fileName', header: 'File' },
+    { field: 'weight', header: 'Weight' },
+  ];
+
   constructor(private queryService: QueryService) { }
 
   ngOnInit(): void {

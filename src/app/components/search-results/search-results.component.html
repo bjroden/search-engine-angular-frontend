@@ -1,6 +1,18 @@
 <main>
-  <div *ngFor="let result of results" class="flex justify-content-start gap-2">
-    <p>{{result.fileName}}</p>
-    <p>{{result.weight}}</p>
-  </div>
+  <p-table [columns]="cols" [value]="results">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+          <th *ngFor="let col of columns">
+              {{col.header}}
+          </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-results let-columns="columns">
+        <tr>
+            <td *ngFor="let col of columns">
+              {{results[col.field]}}
+            </td>
+        </tr>
+    </ng-template>
+  </p-table>
 </main>
