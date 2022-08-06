@@ -12,7 +12,7 @@ export class QueryService {
   constructor(private http: HttpClient) { }
 
   makeSearch(query: string): void {
-    this.http.get<SearchResult[]>('/api').subscribe({
+    this.http.get<SearchResult[]>(`/api?query=${query}`).subscribe({
       next: results => this.sendSearchResults(results),
       error: error => console.log(error)
     });
