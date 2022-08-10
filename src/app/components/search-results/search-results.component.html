@@ -1,4 +1,4 @@
-<main>
+<main *ngIf="results.length > 0">
   <p-table [columns]="cols" [value]="results">
     <ng-template pTemplate="header" let-columns>
       <tr>
