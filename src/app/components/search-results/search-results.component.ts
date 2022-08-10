@@ -12,7 +12,7 @@ export class SearchResultsComponent implements OnInit {
 
   cols = [
     { field: 'ranking', header: 'Ranking' },
-    { field: 'fileName', header: 'File' },
+    { field: 'file_name', header: 'File' },
     { field: 'weight', header: 'Weight' },
   ];
 

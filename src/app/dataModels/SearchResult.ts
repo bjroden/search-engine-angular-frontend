@@ -1,5 +1,5 @@
 export interface SearchResult {
   ranking: Number,
-  fileName: string,
+  file_name: string,
   weight: Number
 }
