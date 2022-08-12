@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ToastModule } from 'primeng/toast';
 import { TableModule } from 'primeng/table';
+import { CardModule } from 'primeng/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,7 +31,8 @@ import { MessageService } from 'primeng/api';
     InputTextModule,
     ButtonModule,
     ToastModule,
-    TableModule
+    TableModule,
+    CardModule,
   ],
   providers: [MessageService],
   bootstrap: [AppComponent]
