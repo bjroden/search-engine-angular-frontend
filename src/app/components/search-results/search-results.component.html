@@ -7,11 +7,11 @@
           </th>
       </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-results let-columns="columns">
+    <ng-template pTemplate="body" let-result>
         <tr>
-            <td *ngFor="let col of columns">
-              {{results[col.field]}}
-            </td>
+          <td>{{result.ranking}}</td>
+          <td><a href="/files/{{result.file_name}}">{{result.file_name}}</a></td>
+          <td>{{result.weight}}</td>
         </tr>
     </ng-template>
   </p-table>
