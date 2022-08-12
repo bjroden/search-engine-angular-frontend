@@ -3,20 +3,23 @@
     <p-table [columns]="cols" [value]="results" sortField="ranking">
       <ng-template pTemplate="header" let-columns>
         <tr>
-            <th *ngFor="let col of columns" [pSortableColumn]="col.field">
-                {{col.header}}
-                <p-sortIcon [field]="col.field"></p-sortIcon>
-            </th>
+          <th *ngFor="let col of columns" [pSortableColumn]="col.field">
+            {{col.header}}
+            <p-sortIcon [field]="col.field"></p-sortIcon>
+          </th>
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-result>
+      <ng-template pTemplate="body" let-result let-columns="columns">
           <tr>
-            <td>{{result.ranking}}</td>
-            <td>
-              <i class="pi pi-file gap-4 pr-2"></i>
-              <a href="/files/{{result.file_name}}">{{result.file_name}}</a>
+            <td *ngFor="let col of columns">
+              <span *ngIf="col.field !== 'file_name'">
+                {{result[col.field]}}
+              </span>
+              <span *ngIf="col.field === 'file_name'">
+                <i class="pi pi-file gap-4 pr-2"></i>
+                <a href="/files/{{result.file_name}}">{{result[col.field]}}</a>
+              </span>
             </td>
-            <td>{{result.weight}}</td>
           </tr>
       </ng-template>
     </p-table>
