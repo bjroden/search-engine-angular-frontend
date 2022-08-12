@@ -12,7 +12,7 @@ export class SearchResultsComponent implements OnInit {
 
   cols = [
     { field: 'ranking', header: 'Ranking' },
-    { field: 'file_name', header: 'File' },
+    { field: 'file_name', header: 'File Name' },
     { field: 'weight', header: 'Weight' },
   ];
 
@@ -22,6 +22,10 @@ export class SearchResultsComponent implements OnInit {
     this.queryService.getSearchResults().subscribe(
       results => this.results = results
     )
+  }
+
+  goToFile(file_name: string): void {
+    window.location.href = `files/${file_name}`
   }
 
 }
